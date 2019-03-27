@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Recipe</title>
+<style type="text/css">
+@import url("../../static/fridge/xiner/style.css");
+</style>
+<link rel="stylesheet" href="../../static/fridge/xiner/font.css">
+</head>
+<style>
+body, html {height: 100%}
+body,h1,h2,h3,h4,h5,h6 {font-family: "Amatic SC", sans-serif}
+.menu {display: none}
+</style>
+<body>
+<!-- Navbar (sit on top) -->
+<div class="top hide-small">
+  <div class="bar xlarge black opacity hover-opacity-off" id="myNavbar">
+    <a href="#" class="bar-item button">HOME</a>
+    <a href="#menu" class="bar-item button">MENU</a>
+    <a href="#about" class="bar-item button">ABOUT</a>
+    <a href="#googleMap" class="bar-item button">CONTACT</a>
+  </div>
+</div>
+  
+<!-- Header with image --><span style="font-size: 100px"><img src="../../static/fridge/xiner/banner1.png" width="1350" height="284" alt=""/></span>
+<!-- Menu Container -->
+<div class="container black padding-64 xxlarge" id="menu">
+  <div class="content">
+    <h1 class="center jumbo" style="margin-bottom:64px">Recipes</h1>
+    <div class="row center border border-dark-grey">
+      <a href="javascript:void(0)" onclick="openMenu(event, 'Regular');" id="myLink">
+      <div class="col s4 tablink padding-large hover-red"> Regular Results</div>
+      </a>
+      <a href="javascript:void(0)" onclick="openMenu(event, 'Prefer');">
+        <div class="col s4 tablink padding-large hover-red"> Preferences</div>
+      </a>
+    </div>
+
+    <div id="Regular" class="container menu padding-32 white">
+        {% for r in recipe_list %}
+      <h1><a href="/fridge/{{ r.0 }}">{{ r.1 }}</a> <span class="right tag dark-grey round">{{ recipe.recipe_cal}}cal</span></h1>
+               <p class="text-grey">123
+{#                {% for ingre in ingredient %}#}
+{#                  % if recipe.recipe_id in ingre.recipe_id|slugify %#}
+{#                      {{ ingre.ingredient_name}}#}
+{#                   {% endif %}#}
+{#                   {% endfor %}#}
+               </p>
+            <hr>
+        {% endfor %}
+    </div>
+
+    <div id="Prefer" class="container menu padding-32 white">
+      <h1><b>Lasagna</b> <span class="tag grey round">Popular</span> <span class="right tag dark-grey round">$13.50</span></h1>
+      <p class="text-grey">Special sauce, mozzarella, parmesan, ground beef</p>
+      <hr> 
+      <h1><b>Ravioli</b> <span class="right tag dark-grey round">$14.50</span></h1>
+      <p class="text-grey">Ravioli filled with cheese</p>
+      <hr>
+      
+      <h1><b>Spaghetti Classica</b> <span class="right tag dark-grey round">$11.00</span></h1>
+      <p class="text-grey">Fresh tomatoes, onions, ground beef</p>
+      <hr>
+
+      <h1><b>Seafood pasta</b> <span class="right tag dark-grey round">$25.50</span></h1>
+      <p class="text-grey">Salmon, shrimp, lobster, garlic</p>
+    </div>
+</div>
+</div>
+
+<script>
+// Tabbed Menu
+function openMenu(evt, menuName) {
+  var i, x, tablinks;
+  x = document.getElementsByClassName("menu");
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < x.length; i++) {
+     tablinks[i].className = tablinks[i].className.replace(" red", "");
+  }
+  document.getElementById(menuName).style.display = "block";
+  evt.currentTarget.firstElementChild.className += " red";
+}
+document.getElementById("myLink").click();
+</script>
+</body>
+</html>
+
+

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<title>log in</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../static/fridge/css/style.css">
+<link rel="stylesheet" href="../../static/fridge/font/font.css">
+<style>
+body, html {height: 100%}
+body,h1,h2,h3,h4,h5,h6 {font-family: "Amatic SC", sans-serif}
+.menu {display: none}
+.bgimg {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("../../static/fridge/image/test.png");
+  background-position: center; 
+  min-height: 30%;
+}
+</style>
+<body>
+
+  
+<!-- Header with image -->
+<header class="bgimg w3-display-container w3-grayscale-min" id="home">
+  <div class="w3-display-middle w3-center">
+    <span class="w3-text-white w3-hide-small" style="font-size:100px">Bon Appétit!</span>
+  </div>
+</header>
+
+
+<!-- Update -->
+<div class="w3-container w3-padding-64 w3-green w3-grayscale w3-xlarge">
+  <div class="w3-content">
+<!--     <h1 class="w3-center w3-jumbo" style="margin-bottom:64px">Log In Your Fridger</h1> -->
+    <p><span class="w3-tag">Please log in</span></p>
+  <!--   <p class="w3-xxlarge">Bon Appétit!</p>
+ -->
+
+<form action="{% url 'fridge:content' %}" method="POST">
+    {% csrf_token %}
+    <input type="text" class="w3-input w3-padding-16" name="username" placeholder="Input Your User Name Here"><br>
+    <input type="text" class="w3-input w3-padding-16" name="password" placeholder="Input Your Password Here"><br>
+    <button class="w3-button w3-light-grey w3-block" type="submit">Log In</button>
+  
+</form>
+
+     <!--  <p><button class="w3-button w3-light-grey w3-block" type="submit">Log In</button></p> -->
+    </form>
+  </div>
+</div>
+<!--     <form method="post" action="{% url 'fridge:add_food' %}" target="_blank">
+      <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Food Name" required name="food_name"></p>
+      <p><input class="w3-input w3-padding-16 w3-border" type="number" placeholder="Amount" required name="amount"></p>
+      <p><input class="w3-input w3-padding-16 w3-border" type="datetime-local" placeholder="Date and time" required name="date" value="2017-11-16T20:00"></p>
+ -->
+
+    
+  </div>
+</div>
+
+
+
+
+
+<script>
+// Tabbed Menu
+function openMenu(evt, menuName) {
+  var i, x, tablinks;
+  x = document.getElementsByClassName("menu");
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < x.length; i++) {
+     tablinks[i].className = tablinks[i].className.replace(" w3-red", "");
+  }
+  document.getElementById(menuName).style.display = "block";
+  evt.currentTarget.firstElementChild.className += " w3-red";
+}
+document.getElementById("myLink").click();
+</script>
+</body>
+</html>
