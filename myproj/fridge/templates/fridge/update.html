@@ -3,7 +3,7 @@
 <title>Add Grocery</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="../../static/fridge/css/style.css">
+<link rel="stylesheet" href="../../static/fridge/css/style_new.css">
 <link rel="stylesheet" href="../../static/fridge/font/font.css">
 <style>
 body, html {height: 100%}
@@ -20,138 +20,138 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Amatic SC", sans-serif}
 <body>
 
 <!-- Navbar (sit on top) -->
-<div class="w3-top w3-hide-small">
-  <div class="w3-bar w3-xlarge w3-black w3-opacity w3-hover-opacity-off" id="myNavbar">
-    <a href="#" class="w3-bar-item w3-button">Home Page</a>
-    <a href="#menu" class="w3-bar-item w3-button">My Fridge</a>
-    <a href="#about" class="w3-bar-item w3-button">ABOUT</a>
-    <a href="#googleMap" class="w3-bar-item w3-button">CONTACT</a>
+<div class=" top  hide-small">
+  <div class=" bar  xlarge  black  opacity  hover-opacity-off" id="myNavbar">
+    <a href="#" class=" bar-item  button">Home Page</a>
+    <a href="{% url 'fridge:profile' %}" class=" bar-item  button">My Profile</a>
+    <a href="#about" class=" bar-item  button">ABOUT</a>
+    <a href="#googleMap" class=" bar-item  button">CONTACT</a>
   </div>
 </div>
   
 <!-- Header with image -->
-<!-- <header class="bgimg w3-display-container w3-grayscale-min" id="home">
-  <div class="w3-display-middle w3-center">
-    <span class="w3-text-white w3-hide-small" style="font-size:100px">TEST<br>TESTTEST</span>
+<!-- <header class="bgimg  display-container  grayscale-min" id="home">
+  <div class=" display-middle  center">
+    <span class=" text-white  hide-small" style="font-size:100px">TEST<br>TESTTEST</span>
   </div>
 </header> -->
 
 <!-- Menu Container -->
-<!-- <div class="w3-container w3-black w3-padding-64 w3-xxlarge" id="menu">
-  <div class="w3-content">
+<!-- <div class=" container  black  padding-64  xxlarge" id="menu">
+  <div class=" content">
   
-    <h1 class="w3-center w3-jumbo" style="margin-bottom:64px">Update My Fridge</h1>
-    <div class="w3-row w3-center w3-border w3-border-dark-grey">
+    <h1 class=" center  jumbo" style="margin-bottom:64px">Update My Fridge</h1>
+    <div class=" row  center  border  border-dark-grey">
       <a href="javascript:void(0)" onclick="openMenu(event, 'Pizza');" id="myLink">
-        <div class="w3-col s4 tablink w3-padding-large w3-hover-red">Vegetable</div>
+        <div class=" col s4 tablink  padding-large  hover-red">Vegetable</div>
       </a>
       <a href="javascript:void(0)" onclick="openMenu(event, 'Pasta');">
-        <div class="w3-col s4 tablink w3-padding-large w3-hover-red">Meat</div>
+        <div class=" col s4 tablink  padding-large  hover-red">Meat</div>
       </a>
       <a href="javascript:void(0)" onclick="openMenu(event, 'Starter');">
-        <div class="w3-col s4 tablink w3-padding-large w3-hover-red">Others</div>
+        <div class=" col s4 tablink  padding-large  hover-red">Others</div>
       </a>
     </div>
 
-    <div id="Pizza" class="w3-container menu w3-padding-32 w3-white">
-      <h1><b>Margherita</b> <span class="w3-right w3-tag w3-dark-grey w3-round">$12.50</span></h1>
-      <p class="w3-text-grey">Fresh tomatoes, fresh mozzarella, fresh basil</p>
+    <div id="Pizza" class=" container menu  padding-32  white">
+      <h1><b>Margherita</b> <span class=" right  tag  dark-grey  round">$12.50</span></h1>
+      <p class=" text-grey">Fresh tomatoes, fresh mozzarella, fresh basil</p>
       <hr>
    
-      <h1><b>Formaggio</b> <span class="w3-right w3-tag w3-dark-grey w3-round">$15.50</span></h1>
-      <p class="w3-text-grey">Four cheeses (mozzarella, parmesan, pecorino, jarlsberg)</p>
+      <h1><b>Formaggio</b> <span class=" right  tag  dark-grey  round">$15.50</span></h1>
+      <p class=" text-grey">Four cheeses (mozzarella, parmesan, pecorino, jarlsberg)</p>
       <hr>
       
-      <h1><b>Chicken</b> <span class="w3-right w3-tag w3-dark-grey w3-round">$17.00</span></h1>
-      <p class="w3-text-grey">Fresh tomatoes, mozzarella, chicken, onions</p>
+      <h1><b>Chicken</b> <span class=" right  tag  dark-grey  round">$17.00</span></h1>
+      <p class=" text-grey">Fresh tomatoes, mozzarella, chicken, onions</p>
       <hr>
 
-      <h1><b>Pineapple'o'clock</b> <span class="w3-right w3-tag w3-dark-grey w3-round">$16.50</span></h1>
-      <p class="w3-text-grey">Fresh tomatoes, mozzarella, fresh pineapple, bacon, fresh basil</p>
+      <h1><b>Pineapple'o'clock</b> <span class=" right  tag  dark-grey  round">$16.50</span></h1>
+      <p class=" text-grey">Fresh tomatoes, mozzarella, fresh pineapple, bacon, fresh basil</p>
       <hr>
 
-      <h1><b>Meat Town</b> <span class="w3-tag w3-red w3-round">Hot!</span><span class="w3-right w3-tag w3-dark-grey w3-round">$20.00</span></h1>
-      <p class="w3-text-grey">Fresh tomatoes, mozzarella, hot pepporoni, hot sausage, beef, chicken</p>
+      <h1><b>Meat Town</b> <span class=" tag  red  round">Hot!</span><span class=" right  tag  dark-grey  round">$20.00</span></h1>
+      <p class=" text-grey">Fresh tomatoes, mozzarella, hot pepporoni, hot sausage, beef, chicken</p>
       <hr>
 
-      <h1><b>Parma</b> <span class="w3-tag w3-grey w3-round">New</span><span class="w3-right w3-tag w3-dark-grey w3-round">$21.50</span></h1>
-      <p class="w3-text-grey">Fresh tomatoes, mozzarella, parma, bacon, fresh arugula</p>
+      <h1><b>Parma</b> <span class=" tag  grey  round">New</span><span class=" right  tag  dark-grey  round">$21.50</span></h1>
+      <p class=" text-grey">Fresh tomatoes, mozzarella, parma, bacon, fresh arugula</p>
     </div>
 
-    <div id="Pasta" class="w3-container menu w3-padding-32 w3-white">
-      <h1><b>Lasagna</b> <span class="w3-tag w3-grey w3-round">Popular</span> <span class="w3-right w3-tag w3-dark-grey w3-round">$13.50</span></h1>
-      <p class="w3-text-grey">Special sauce, mozzarella, parmesan, ground beef</p>
+    <div id="Pasta" class=" container menu  padding-32  white">
+      <h1><b>Lasagna</b> <span class=" tag  grey  round">Popular</span> <span class=" right  tag  dark-grey  round">$13.50</span></h1>
+      <p class=" text-grey">Special sauce, mozzarella, parmesan, ground beef</p>
       <hr>
    
-      <h1><b>Ravioli</b> <span class="w3-right w3-tag w3-dark-grey w3-round">$14.50</span></h1>
-      <p class="w3-text-grey">Ravioli filled with cheese</p>
+      <h1><b>Ravioli</b> <span class=" right  tag  dark-grey  round">$14.50</span></h1>
+      <p class=" text-grey">Ravioli filled with cheese</p>
       <hr>
       
-      <h1><b>Spaghetti Classica</b> <span class="w3-right w3-tag w3-dark-grey w3-round">$11.00</span></h1>
-      <p class="w3-text-grey">Fresh tomatoes, onions, ground beef</p>
+      <h1><b>Spaghetti Classica</b> <span class=" right  tag  dark-grey  round">$11.00</span></h1>
+      <p class=" text-grey">Fresh tomatoes, onions, ground beef</p>
       <hr>
 
-      <h1><b>Seafood pasta</b> <span class="w3-right w3-tag w3-dark-grey w3-round">$25.50</span></h1>
-      <p class="w3-text-grey">Salmon, shrimp, lobster, garlic</p>
+      <h1><b>Seafood pasta</b> <span class=" right  tag  dark-grey  round">$25.50</span></h1>
+      <p class=" text-grey">Salmon, shrimp, lobster, garlic</p>
     </div>
 
 
-    <div id="Starter" class="w3-container menu w3-padding-32 w3-white">
-      <h1><b>Today's Soup</b> <span class="w3-tag w3-grey w3-round">Seasonal</span><span class="w3-right w3-tag w3-dark-grey w3-round">$5.50</span></h1>
-      <p class="w3-text-grey">Ask the waiter</p>
+    <div id="Starter" class=" container menu  padding-32  white">
+      <h1><b>Today's Soup</b> <span class=" tag  grey  round">Seasonal</span><span class=" right  tag  dark-grey  round">$5.50</span></h1>
+      <p class=" text-grey">Ask the waiter</p>
       <hr>
    
-      <h1><b>Bruschetta</b> <span class="w3-right w3-tag w3-dark-grey w3-round">$8.50</span></h1>
-      <p class="w3-text-grey">Bread with pesto, tomatoes, onion, garlic</p>
+      <h1><b>Bruschetta</b> <span class=" right  tag  dark-grey  round">$8.50</span></h1>
+      <p class=" text-grey">Bread with pesto, tomatoes, onion, garlic</p>
       <hr>
       
-      <h1><b>Garlic bread</b> <span class="w3-right w3-tag w3-dark-grey w3-round">$9.50</span></h1>
-      <p class="w3-text-grey">Grilled ciabatta, garlic butter, onions</p>
+      <h1><b>Garlic bread</b> <span class=" right  tag  dark-grey  round">$9.50</span></h1>
+      <p class=" text-grey">Grilled ciabatta, garlic butter, onions</p>
       <hr>
       
-      <h1><b>Tomozzarella</b> <span class="w3-right w3-tag w3-dark-grey w3-round">$10.50</span></h1>
-      <p class="w3-text-grey">Tomatoes and mozzarella</p>
+      <h1><b>Tomozzarella</b> <span class=" right  tag  dark-grey  round">$10.50</span></h1>
+      <p class=" text-grey">Tomatoes and mozzarella</p>
     </div><br>
 
   </div>
 </div>
 <!-- Update -->
-<div class="w3-container w3-padding-64 w3-blue-grey w3-grayscale-min w3-xlarge">
-  <div class="w3-content">
-    <h1 class="w3-center w3-jumbo" style="margin-bottom:64px">Update Your Fridger</h1>
-    <p><span class="w3-tag">Start Here!</span></p>
-    <p class="w3-xxlarge"> Select the ingredients you bought today!</p>
+<div class=" container  padding-64  blue-grey  grayscale-min  xlarge">
+  <div class=" content">
+    <h1 class=" center  jumbo" style="margin-bottom:64px">Update Your Fridger</h1>
+    <p><span class=" tag">Start Here!</span></p>
+    <p class=" xxlarge"> Select the ingredients you bought today!</p>
 
     <form method="POST" action="{% url 'fridge:new_food' %}">
         {% csrf_token %}
-      <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Food Name" required name="food_name"></p>
-      <p><input class="w3-input w3-padding-16 w3-border" type="number" min=1 placeholder="Amount" required name="amount"></p>
-      <!--<p><input class="w3-input w3-padding-16 w3-border" type="datetime-local" placeholder="Date and time" required name="date" value="2017-11-16T20:00"></p>-->
-<!-- <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Message \ Special requirements" required name="Message"></p> -->
-      <p><button class="w3-button w3-light-grey w3-block" type="submit">UPDATE NOW</button></p>
-      <p><a href="{% url 'fridge:content' %}" class="w3-button w3-light-grey w3-block">RETURN TO HOME PAGE</a></p>
+      <p><input class=" input  padding-16  border" type="text" placeholder="Food Name" required name="food_name"></p>
+      <p><input class=" input  padding-16  border" type="number" min=1 placeholder="Amount" required name="amount"></p>
+      <!--<p><input class=" input  padding-16  border" type="datetime-local" placeholder="Date and time" required name="date" value="2017-11-16T20:00"></p>-->
+<!-- <p><input class=" input  padding-16  border" type="text" placeholder="Message \ Special requirements" required name="Message"></p> -->
+      <p><button class=" button  light-grey  block" type="submit">UPDATE NOW</button></p>
+      <p><a href="{% url 'fridge:content' %}" class=" button  light-grey  block">RETURN TO HOME PAGE</a></p>
     </form>
 
   </div>
 </div>
 
 <!-- Author Container -->
-<div class="w3-container w3-padding-64 w3-red w3-grayscale w3-xlarge" id="about">
-  <div class="w3-content w3-center">
-    <h1 class="w3-center w3-jumbo" style="margin-bottom:64px">About Author</h1>
+<div class=" container  padding-64  red  grayscale  xlarge" id="about">
+  <div class=" content  center">
+    <h1 class=" center  jumbo" style="margin-bottom:64px">About Author</h1>
     <h1><b>Xiner Liu, Yuqian Cao, Han Wang, Xue Lu</b></h1>
-    <!-- <p><strong>The Chef?</strong> Mr. Italiano himself<img src="/w3images/chef.jpg" style="width:150px" class="w3-circle w3-right" alt="Chef"></p>
+    <!-- <p><strong>The Chef?</strong> Mr. Italiano himself<img src="/w3images/chef.jpg" style="width:150px" class=" circle  right" alt="Chef"></p>
     <p>We are proud of our interiors.</p>
-    <img src="/w3images/onepage_restaurant.jpg" style="width:100%" class="w3-margin-top w3-margin-bottom" alt="Restaurant"> -->
+    <img src="/w3images/onepage_restaurant.jpg" style="width:100%" class=" margin-top  margin-bottom" alt="Restaurant"> -->
 <!--     <h1><b>Opening Hours</b></h1> -->
     
-<!--     <div class="w3-row">
-      <div class="w3-col s6">
+<!--     <div class=" row">
+      <div class=" col s6">
         <p>Mon & Tue CLOSED</p>
         <p>Wednesday 10.00 - 24.00</p>
         <p>Thursday 10:00 - 24:00</p>
       </div>
-      <div class="w3-col s6">
+      <div class=" col s6">
         <p>Friday 10:00 - 12:00</p>
         <p>Saturday 10:00 - 23:00</p>
         <p>Sunday Closed</p>
@@ -162,8 +162,8 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Amatic SC", sans-serif}
 </div>
 
 <!-- Footer -->
-<footer class="w3-center w3-black w3-padding-48 w3-xxlarge">
-  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+<footer class=" center  black  padding-48  xxlarge">
+  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class=" hover-text-green">w3.css</a></p>
 </footer>
 
 <script>
@@ -176,10 +176,10 @@ function openMenu(evt, menuName) {
   }
   tablinks = document.getElementsByClassName("tablink");
   for (i = 0; i < x.length; i++) {
-     tablinks[i].className = tablinks[i].className.replace(" w3-red", "");
+     tablinks[i].className = tablinks[i].className.replace("  red", "");
   }
   document.getElementById(menuName).style.display = "block";
-  evt.currentTarget.firstElementChild.className += " w3-red";
+  evt.currentTarget.firstElementChild.className += "  red";
 }
 document.getElementById("myLink").click();
 </script>

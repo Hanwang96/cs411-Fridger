@@ -5,8 +5,14 @@ from . import views
 app_name = 'fridge'
 urlpatterns = [
     path('', views.index, name='index'),
+    path('register', views.signup, name='register'),
+    path('new_user', views.newuser, name='new_user'),
+
+
+
     path('<int:r_id>/', views.detail, name='detail'),
     path('content', views.content, name='content'),
+    path('mypage', views.myhistory, name='profile'),
     path('search', views.search, name='search'),
 
     path('modify_amount', views.edit, name='modify_amount'),
